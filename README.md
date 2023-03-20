@@ -1,24 +1,46 @@
-# README
+# Pizza_Restaurant_API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
+This is an API built with ruby on rails for tracking pizzas restaurants.
 
-Things you may want to cover:
+# Using the API
+The following endpoints are available;
 
-* Ruby version
+1. GET `/restaurants` - retrieve all restaurants.
 
-* System dependencies
+2. GET `/restaurants/:id` - retrieve one restaurant by its id.
 
-* Configuration
+3. DELETE `/restaurants/:id` - delete restaurant by its id along with any `RestaurantPizza`s that are associated with it
 
-* Database creation
+4. GET `/pizzas` - retrieve all pizzas
 
-* Database initialization
+5. POST `/restaurant_pizzas` - create a new instance of `RestaurantPizza`
 
-* How to run the test suite
+The endpoint should be included at the end of the main url `https://manenepizza.onrender.com`. For example to retrieve all restaurants, the url will be `https://manenepizza.onrender.com/restaurants`.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Installing the API to local environment
+- Step 1: Clone this repo to your local environment.
 
-* Deployment instructions
+        git@github.com:ntwigamartin/Pizza_Restaurant_API.git
 
-* ...
+- Step 2: Navigate to the cloned repository and run the following command to open it on your editor;
+
+        code .
+
+- Step 3: Install the dependencies using;
+
+        Bundle install
+
+- Step 4: run the migrations & seed data using;
+
+        rails db:migrate db:seed
+
+- Step 4: Start the application using;
+
+        rails s
+
+NB: You require a code editor(e.g vs code) and an API client(e.g Thunder client or Postman) to run the API locally.
+
+# Author
+
+- Martin Ntwiga
