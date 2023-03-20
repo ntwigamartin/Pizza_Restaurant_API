@@ -4,12 +4,12 @@ class RestaurantsController < ApplicationController
     
     def index
         restaurants = Restaurant.all
-        render json: restaurants, status: :ok
+        render json: restaurants, each_serializer: IndexSerializer, status: :ok
     end
 
     def show
         restaurant = Restaurant.find(params[:id])
-        render json: restaurant, status: :ok
+        render json: restaurant, serializer: ShowSerializer, status: :ok
     end
 
     private
