@@ -12,6 +12,16 @@ class RestaurantsController < ApplicationController
         render json: restaurant, serializer: ShowSerializer, status: :ok
     end
 
+    def destroy
+        restaurant = Restaurant.find(params[:id])
+        if restaurant
+            restaurant.destroy
+            render json: {}, status: :no_content
+        else
+            render json: { error: "Restaurant not found" }, status: :not_found
+        end
+    end
+
     private
 
     def not_found_response

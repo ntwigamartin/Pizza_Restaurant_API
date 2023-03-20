@@ -6,7 +6,7 @@ class RestaurantPizzasController < ApplicationController
         pizza = Pizza.find(data.pizza_id)
         render json: pizza, status: :created
       else
-        render json: data.errors
+        render json: { errors: ["validation errors"] }
       end
     end
 
