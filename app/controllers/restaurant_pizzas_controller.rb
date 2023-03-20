@@ -1,7 +1,7 @@
 class RestaurantPizzasController < ApplicationController
 
     def create
-      data = RestaurantPizza.create!(restaurant_pizza_params)
+      data = RestaurantPizza.create(restaurant_pizza_params)
       if data.valid?
         pizza = Pizza.find(data.pizza_id)
         render json: pizza, status: :created
